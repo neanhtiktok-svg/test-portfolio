@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="km" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>សាលាបឋមសិក្សារវត្តស្វាយ - Wat Svay Primary School</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            yellow: '#FFD152',
+                            sky: '#38BDF8',
+                            blue: '#2563EB',
+                            mint: '#34D399',
+                            coral: '#FB7185',
+                            purple: '#A855F7',
+                            cream: '#FEFCE8',
+                            dark: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        khmer: ['Kantumruy Pro', 'sans-serif'],
+                        fun: ['Fredoka', 'Kantumruy Pro', 'cursive']
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2.5s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .font-fun {
+            font-family: 'Fredoka', 'Kantumruy Pro', cursive;
+        }
+        /* Custom friendly scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FEF3C7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FBBF24;
+            border-radius: 9999px;
+            border: 2px solid #FEF3C7;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B;
+        }
+        .cloud-shape {
+            border-radius: 50px 50px 20px 20px;
+        }
+        .dotted-bg {
+            background-image: radial-gradient(#F59E0B 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-amber-300 selection:text-slate-900 overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-400 via-rose-400 to-sky-400 text-white text-xs sm:text-sm font-semibold py-2 px-4 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center">
+            <div class="flex items-center gap-2">
+                <span class="bg-white/30 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-xs">
+                    <i class="fa-solid fa-bullhorn text-yellow-200"></i> សេចក្តីជូនដំណឹង
+                </span>
+                <span>បើកទទួលពាក្យចុះឈ្មោះសិស្សថ្មី ឆ្នាំសិក្សា ២០២៦-២០២៧ ថ្នាក់មត្តេយ្យ & បឋមសិក្សា (ទី១-ទី៦)</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-medium">
+                <a href="tel:+85512999888" class="hover:underline flex items-center gap-1">
+                    <i class="fa-solid fa-phone"></i> +855 12 999 888
+                </a>
+                <span class="opacity-60">|</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> ចន្ទ - សៅរ៍: 7:00 ព្រឹក - 5:00 ល្ងាច</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b-4 border-amber-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & School Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-400 via-rose-400 to-sky-400 p-1 shadow-md group-hover:rotate-6 transition duration-300">
+                        <div class="w-full h-full bg-white rounded-xl flex items-center justify-center text-3xl">
+                            ☀️
+                        </div>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-bold tracking-tight text-slate-800 group-hover:text-blue-600 transition font-fun">
+                            សាលាបឋមសិក្សារវត្តស្វាយ
+                        </span>
+                        <span class="block text-xs font-bold text-sky-500 tracking-wider uppercase font-fun">
+                            Wat Svay Primary School
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-1 font-semibold text-sm text-slate-700">
+                    <a href="#home" class="px-3.5 py-2 rounded-xl text-blue-600 bg-blue-50 hover:bg-blue-100 transition">ទំព័រដើម</a>
+                    <a href="#classes" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-slate-100 transition">កម្រិតថ្នាក់ & មុខវិជ្ជា</a>
+                    <a href="#games" class="px-3.5 py-2 rounded-xl hover:text-rose-500 hover:bg-rose-50 transition flex items-center gap-1">
+                        <i class="fa-solid fa-gamepad text-rose-500 animate-bounce"></i> ហ្គេមរៀនសូត្រ
+                    </a>
+                    <a href="#activities" class="px-3.5 py-2 rounded-xl hover:text-amber-600 hover:bg-amber-50 transition">សកម្មភាព & រូបភាព</a>
+                    <a href="#schedule" class="px-3.5 py-2 rounded-xl hover:text-emerald-600 hover:bg-emerald-50 transition">កាលវិភាគ & អាហារូបត្ថម្ភ</a>
+                    <a href="#contact" class="px-3.5 py-2 rounded-xl hover:text-blue-600 hover:bg-slate-100 transition">ទំនាក់ទំនង</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="#admission" class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-400 to-rose-400 hover:from-amber-500 hover:to-rose-500 text-white font-bold text-sm shadow-md hover:shadow-lg transform active:scale-95 transition flex items-center gap-2">
+                        <i class="fa-solid fa-pencil"></i>
+                        <span>ចុះឈ្មោះចូលរៀន</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Hamburger -->
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" aria-label="Toggle Menu" class="p-2.5 rounded-xl bg-amber-100 text-amber-800 hover:bg-amber-200 focus:outline-none transition">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-amber-200 px-4 pt-3 pb-6 space-y-2 font-medium">
+            <a href="#home" class="block px-4 py-2.5 rounded-xl text-blue-600 bg-blue-50 font-bold">ទំព័រដើម (Home)</a>
+            <a href="#classes" class="block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-100">កម្រិតថ្នាក់ & មុខវិជ្ជា (Classes)</a>
+            <a href="#games" class="block px-4 py-2.5 rounded-xl text-rose-600 hover:bg-rose-50 font-bold">ហ្គេមរៀនសូត្រកុមារ (Mini Games)</a>
+            <a href="#activities" class="block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-100">សកម្មភាព & រូបភាព (Activities)</a>
+            <a href="#schedule" class="block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-100">កាលវិភាគ & អាហារ (Schedule & Food)</a>
+            <a href="#contact" class="block px-4 py-2.5 rounded-xl text-slate-700 hover:bg-slate-100">ទំនាក់ទំនង (Contact)</a>
+            <div class="pt-2">
+                <a href="#admission" class="block w-full text-center py-3 bg-gradient-to-r from-amber-400 to-rose-400 text-white font-bold rounded-xl shadow-md">
+                    ចុះឈ្មោះចូលរៀនអនឡាញ (Register Online)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-10 pb-20 md:pt-16 md:pb-28 bg-gradient-to-b from-amber-50 via-sky-50 to-white overflow-hidden">
+        <!-- Floating Playground Stickers -->
+        <div class="absolute top-10 left-5 text-4xl animate-bounce-slow opacity-80 hidden md:block">🎨</div>
+        <div class="absolute bottom-10 left-12 text-5xl animate-float opacity-80 hidden md:block">🚀</div>
+        <div class="absolute top-20 right-10 text-5xl animate-wiggle opacity-80 hidden md:block">🧸</div>
+        <div class="absolute bottom-12 right-20 text-4xl animate-bounce-slow opacity-80 hidden md:block">📚</div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-amber-300 text-amber-700 text-xs sm:text-sm font-bold animate-pulse">
+                        <span>🌈 បរិស្ថានសិក្សាប្រកបដោយក្តីស្រឡាញ់ & ភាពរីករាយ</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                        ចិញ្ចឹមបីបាច់បញ្ញា និងបណ្តុះ <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-rose-500 to-amber-500 font-fun">
+                            ទេពកោសល្យកុមារគ្រប់រូប
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        សាលាបឋមសិក្សារស្មីកុមារ ផ្តោតលើការអប់រំគុណភាពខ្ពស់ ផ្សារភ្ជាប់រវាងចំណេះដឹងទូទៅ សីលធម៌ ភាសាអន្តរជាតិ បច្ចេកវិទ្យា និងការអភិវឌ្ឍរាងកាយតាមរយៈការលេង និងការអនុវត្តជាក់ស្តែង។
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#admission" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-rose-400 to-rose-500 hover:from-amber-500 hover:to-rose-600 text-white font-bold text-base shadow-lg shadow-rose-200 transform hover:-translate-y-1 transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-lg"></i>
+                            <span>ចុះឈ្មោះចូលរៀនឥឡូវនេះ</span>
+                        </a>
+                        <a href="#games" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white hover:bg-slate-50 text-blue-600 font-bold text-base border-2 border-blue-200 shadow-sm hover:border-blue-400 transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-shapes text-amber-500"></i>
+                            <span>លេងហ្គេមរៀនសូត្រ</span>
+                        </a>
+                    </div>
+
+                    <!-- Mini Badges -->
+                    <div class="pt-4 grid grid-cols-3 gap-3 text-center sm:text-left">
+                        <div class="bg-white/80 backdrop-blur-sm p-3 rounded-2xl border border-amber-200 shadow-xs">
+                            <div class="text-2xl mb-1">🍎</div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-800">អាហារូបត្ថម្ភស្អាត</div>
+                            <div class="text-[11px] text-slate-500">អនាម័យ ១០០%</div>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm p-3 rounded-2xl border border-sky-200 shadow-xs">
+                            <div class="text-2xl mb-1">🇬🇧</div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-800">កម្មវិធីទ្វេភាសា</div>
+                            <div class="text-[11px] text-slate-500">ខ្មែរ & អង់គ្លេស</div>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm p-3 rounded-2xl border border-emerald-200 shadow-xs">
+                            <div class="text-2xl mb-1">🚌</div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-800">រថយន្តដឹកជញ្ជូន</div>
+                            <div class="text-[11px] text-slate-500">សុវត្ថិភាពខ្ពស់</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mascot & Visual Graphic -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-sm sm:max-w-md">
+                        <!-- Background Circle -->
+                        <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-yellow-200 via-rose-200 to-sky-200 absolute -top-4 -left-4 blur-2xl opacity-70"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-amber-200">
+                            <!-- Mascot Banner -->
+                            <div class="relative rounded-2xl bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-500 p-6 text-white text-center overflow-hidden">
+                                <div class="text-7xl mb-2 animate-bounce-slow">🦉</div>
+                                <h3 class="text-xl font-bold font-fun">សួស្តីប្អូនៗកុមារតូច!</h3>
+                                <p class="text-xs text-sky-100 mt-1">រៀនដោយរីករាយ ឆ្លាតវៃ និងមានទំនួលខុសត្រូវ</p>
+                                <!-- Decorative star -->
+                                <span class="absolute top-3 right-4 text-yellow-300 text-xl animate-spin">✨</span>
+                                <span class="absolute bottom-3 left-4 text-yellow-300 text-xl">⭐</span>
+                            </div>
+
+                            <!-- Highlights list -->
+                            <div class="mt-6 space-y-3">
+                                <div class="flex items-center gap-3 p-3 rounded-xl bg-amber-50 border border-amber-200">
+                                    <span class="w-8 h-8 rounded-lg bg-amber-400 text-white flex items-center justify-center font-bold text-sm">1</span>
+                                    <div class="text-xs">
+                                        <div class="font-bold text-slate-800">ថ្នាក់រៀនមានម៉ាស៊ីនត្រជាក់ & កាមេរ៉ា ២៤/៧</div>
+                                        <div class="text-slate-500">មាតាបិតាអាចតាមដានកូនៗបាន</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded-xl bg-rose-50 border border-rose-200">
+                                    <span class="w-8 h-8 rounded-lg bg-rose-400 text-white flex items-center justify-center font-bold text-sm">2</span>
+                                    <div class="text-xs">
+                                        <div class="font-bold text-slate-800">សួនកម្សាន្ត និងអាងហែលទឹកសុវត្ថិភាព</div>
+                                        <div class="text-slate-500">លេងកីឡាដើម្បីសុខភាពមាំមួន</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+                                    <span class="w-8 h-8 rounded-lg bg-emerald-400 text-white flex items-center justify-center font-bold text-sm">3</span>
+                                    <div class="text-xs">
+                                        <div class="font-bold text-slate-800">ក្លឹបមនុស្សយន្ត (STEM Robotics) & គំនូរ</div>
+                                        <div class="text-slate-500">បណ្តុះគំនិតច្នៃប្រឌិតតាំងពីកុមារភាព</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stat Badge -->
+                        <div class="absolute -bottom-6 -right-4 bg-white p-3.5 rounded-2xl shadow-xl border-2 border-emerald-400 flex items-center gap-3 animate-float">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold">
+                                💖
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-slate-800">៩៨% ពេញចិត្ត</div>
+                                <div class="text-[10px] text-slate-500">ពីអាណាព្យាបាលសិស្ស</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grades & Curriculum Section -->
+    <section id="classes" class="py-16 md:py-24 bg-white border-t border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-rose-500 font-bold text-xs sm:text-sm uppercase tracking-wider bg-rose-50 px-4 py-1.5 rounded-full border border-rose-200">
+                    <i class="fa-solid fa-shapes mr-1"></i> កម្រិតថ្នាក់សិក្សា
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 font-fun">
+                    កម្មវិធីសិក្សាតាមកម្រិតអាយុរបស់កុមារ
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    រៀបចំឡើងស្របតាមស្តង់ដារក្រសួងអប់រំ យុវជន និងកីឡា បូកផ្សំវិធីសាស្ត្រទំនើបសតវត្សរ៍ទី២១
+                </p>
+            </div>
+
+            <!-- Grade Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Kindergarten Card -->
+                <div class="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 border-2 border-amber-300 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🧸</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-amber-200 text-amber-900 rounded-full">អាយុ ៣-៥ ឆ្នាំ</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 font-fun">ថ្នាក់មត្តេយ្យសិក្សា</h3>
+                        <p class="text-xs text-amber-700 font-semibold mb-3">Kindergarten & Pre-school</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            ផ្តោតលើការរៀនតាមរយៈការលេង ចំណាំតួអក្សរ លេខ បង្កើតទម្លាប់ល្អ អនាម័យ និងការប្រាស្រ័យទាក់ទង។
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
+                            <li><i class="fa-solid fa-circle-check text-amber-500 mr-1.5"></i> ការនិយាយ និងស្តាប់រឿងនិទាន</li>
+                            <li><i class="fa-solid fa-circle-check text-amber-500 mr-1.5"></i> គំនូរផាត់ពណ៌ & ច្រៀងរាំ</li>
+                            <li><i class="fa-solid fa-circle-check text-amber-500 mr-1.5"></i> ល្បែងអភិវឌ្ឍបញ្ញា និងសាច់ដុំ</li>
+                        </ul>
+                    </div>
+                    <button onclick="openClassModal('kinder')" class="w-full py-2.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-500 text-white font-bold text-xs transition">
+                        មើលព័ត៌មានលម្អិត
+                    </button>
+                </div>
+
+                <!-- Primary Grade 1-2 -->
+                <div class="bg-gradient-to-b from-sky-50 to-white rounded-3xl p-6 border-2 border-sky-300 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">✏️</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-sky-200 text-sky-900 rounded-full">អាយុ ៦-៧ ឆ្នាំ</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 font-fun">ថ្នាក់ទី១ និង ទី២</h3>
+                        <p class="text-xs text-sky-700 font-semibold mb-3">Lower Primary (Grades 1-2)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            ពង្រឹងមូលដ្ឋានគ្រឹះអំណាន សរសេរអក្សរខ្មែរ គណិតវិទ្យាបឋម និងការសន្ទនាភាសាអង់គ្លេសប្រចាំថ្ងៃ។
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
+                            <li><i class="fa-solid fa-circle-check text-sky-500 mr-1.5"></i> មូលដ្ឋានភាសាខ្មែរ (ព្យញ្ជនៈ-ស្រៈ)</li>
+                            <li><i class="fa-solid fa-circle-check text-sky-500 mr-1.5"></i> គណិតវិទ្យា (បូក ដក សាមញ្ញ)</li>
+                            <li><i class="fa-solid fa-circle-check text-sky-500 mr-1.5"></i> ភាសាអង់គ្លេស Phonics បឋម</li>
+                        </ul>
+                    </div>
+                    <button onclick="openClassModal('g12')" class="w-full py-2.5 px-4 rounded-xl bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs transition">
+                        មើលព័ត៌មានលម្អិត
+                    </button>
+                </div>
+
+                <!-- Primary Grade 3-4 -->
+                <div class="bg-gradient-to-b from-rose-50 to-white rounded-3xl p-6 border-2 border-rose-300 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🔬</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-rose-200 text-rose-900 rounded-full">អាយុ ៨-៩ ឆ្នាំ</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 font-fun">ថ្នាក់ទី៣ និង ទី៤</h3>
+                        <p class="text-xs text-rose-700 font-semibold mb-3">Middle Primary (Grades 3-4)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            បង្កើនសមត្ថភាពគិតពិចារណា ការពិសោធន៍វិទ្យាសាស្ត្រសាមញ្ញ ការសរសេរតែងសេចក្តី និងកុំព្យូទ័របឋម។
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
+                            <li><i class="fa-solid fa-circle-check text-rose-500 mr-1.5"></i> វិទ្យាសាស្ត្រ និងការសិក្សាសង្គម</li>
+                            <li><i class="fa-solid fa-circle-check text-rose-500 mr-1.5"></i> គណិតវិទ្យា (គុណ ចែក ប្រភាគ)</li>
+                            <li><i class="fa-solid fa-circle-check text-rose-500 mr-1.5"></i> កុំព្យូទ័រ និងបច្ចេកវិទ្យា STEM</li>
+                        </ul>
+                    </div>
+                    <button onclick="openClassModal('g34')" class="w-full py-2.5 px-4 rounded-xl bg-rose-400 hover:bg-rose-500 text-white font-bold text-xs transition">
+                        មើលព័ត៌មានលម្អិត
+                    </button>
+                </div>
+
+                <!-- Primary Grade 5-6 -->
+                <div class="bg-gradient-to-b from-purple-50 to-white rounded-3xl p-6 border-2 border-purple-300 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🏅</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-purple-200 text-purple-900 rounded-full">អាយុ ១០-១១ ឆ្នាំ</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 font-fun">ថ្នាក់ទី៥ និង ទី៦</h3>
+                        <p class="text-xs text-purple-700 font-semibold mb-3">Upper Primary (Grades 5-6)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            ត្រៀមខ្លួនឆ្ពោះទៅអនុវិទ្យាល័យ ការដោះស្រាយលំហាត់ស្មុគស្មាញ ការនិយាយជាសាធារណៈ និងភាពជាអ្នកដឹកនាំ។
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
+                            <li><i class="fa-solid fa-circle-check text-purple-500 mr-1.5"></i> ត្រៀមប្រឡងបញ្ចប់បឋមសិក្សា</li>
+                            <li><i class="fa-solid fa-circle-check text-purple-500 mr-1.5"></i> ភាសាអង់គ្លេសកម្រិត Cambridge A2</li>
+                            <li><i class="fa-solid fa-circle-check text-purple-500 mr-1.5"></i> ការសរសេរកូដកុមារ (Scratch Coding)</li>
+                        </ul>
+                    </div>
+                    <button onclick="openClassModal('g56')" class="w-full py-2.5 px-4 rounded-xl bg-purple-400 hover:bg-purple-500 text-white font-bold text-xs transition">
+                        មើលព័ត៌មានលម្អិត
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Kids Learning Playground (Quiz Games) -->
+    <section id="games" class="py-16 md:py-24 bg-gradient-to-b from-sky-50 via-amber-50 to-sky-100 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="inline-block text-amber-600 font-bold text-xs sm:text-sm uppercase tracking-wider bg-amber-100 px-4 py-1 rounded-full border border-amber-300">
+                    🎮 លេងផង រៀនផង សប្បាយរីករាយ!
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-fun">
+                    ហ្គេមរៀនសូត្រឆ្លាតវៃសម្រាប់កុមារ
+                </h2>
+                <p class="text-slate-600 text-sm mt-1">
+                    អនុវត្តចំណេះដឹងតាមរយៈការឆ្លើយសំណួរងាយៗ និងប្រមូលពិន្ទុរង្វាន់ផ្កាយមាស!
+                </p>
+            </div>
+
+            <!-- Game Center Wrapper -->
+            <div class="bg-white rounded-3xl shadow-xl border-4 border-amber-300 p-6 sm:p-8">
+                <!-- Game Tabs -->
+                <div class="flex justify-center gap-3 mb-8">
+                    <button id="tabBtnKhmer" onclick="switchGameMode('khmer')" class="px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm bg-rose-500 text-white shadow-md transition flex items-center gap-2">
+                        <span>🦁 ល្បែងតួអក្សរខ្មែរ (Khmer Quiz)</span>
+                    </button>
+                    <button id="tabBtnMath" onclick="switchGameMode('math')" class="px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-sky-100 transition flex items-center gap-2">
+                        <span>🔢 ល្បែងគណិតរហ័ស (Math Quiz)</span>
+                    </button>
+                </div>
+
+                <!-- Star Score Display -->
+                <div class="flex items-center justify-between bg-amber-100/70 p-4 rounded-2xl mb-6 border border-amber-300">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl animate-spin-slow">⭐</span>
+                        <div>
+                            <span class="text-xs font-bold text-slate-700">ពិន្ទុផ្កាយមាសរបស់អ្នក៖</span>
+                            <span id="playerScore" class="font-bold text-amber-700 text-xl ml-1 font-fun">0</span>
+                        </div>
+                    </div>
+                    <div id="gameStreakBadge" class="text-xs font-bold px-3 py-1 bg-white rounded-xl shadow-xs text-emerald-600">
+                        តោះចាប់ផ្តើមលេង! 🎯
+                    </div>
+                </div>
+
+                <!-- Game Container 1: Khmer Quiz -->
+                <div id="khmerGameBox" class="space-y-6">
+                    <div class="text-center">
+                        <span class="text-xs font-bold text-slate-400 uppercase">សំណួរទី <span id="khmerQNum">1</span> / 5</span>
+                        <h4 id="khmerQuestionText" class="text-xl sm:text-2xl font-bold text-slate-800 mt-1">
+                            តើពាក្យមួយណាត្រូវនឹងរូបភាពនេះ?
+                        </h4>
+                        <!-- Large Emoji / Clue -->
+                        <div id="khmerEmojiClue" class="text-8xl my-4 animate-bounce-slow">
+                            🦁
+                        </div>
+                    </div>
+
+                    <!-- 4 Answer Options -->
+                    <div id="khmerOptionsGrid" class="grid grid-cols-2 gap-4">
+                        <!-- Options injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Game Container 2: Math Quiz (Hidden initially) -->
+                <div id="mathGameBox" class="hidden space-y-6">
+                    <div class="text-center">
+                        <span class="text-xs font-bold text-slate-400 uppercase">សំណួរទី <span id="mathQNum">1</span> / 5</span>
+                        <h4 class="text-xl sm:text-2xl font-bold text-slate-800 mt-1">
+                            តើផលបូក ឬដកនេះស្មើនឹងប៉ុន្មាន?
+                        </h4>
+                        <!-- Math Equation Box -->
+                        <div id="mathEquationText" class="text-5xl sm:text-6xl font-extrabold text-blue-600 my-6 font-fun tracking-wider">
+                            5 + 3 = ?
+                        </div>
+                    </div>
+
+                    <!-- 4 Answer Options -->
+                    <div id="mathOptionsGrid" class="grid grid-cols-2 gap-4">
+                        <!-- Options injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Game Success Message Toast -->
+                <div id="gameFeedbackMsg" class="hidden mt-4 p-3 rounded-xl text-center font-bold text-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Schedule & Daily Nutrition Tab -->
+    <section id="schedule" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-sky-600 font-bold text-xs sm:text-sm uppercase tracking-wider bg-sky-50 px-4 py-1.5 rounded-full border border-sky-200">
+                    <i class="fa-solid fa-calendar-day mr-1"></i> កាលវិភាគ & សុខភាព
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 font-fun">
+                    ជីវិតសិក្សាប្រចាំថ្ងៃ និងអាហារូបត្ថម្ភ
+                </h2>
+                <p class="text-slate-600 text-sm mt-2">
+                    តុល្យភាពល្អឥតខ្ចោះរវាងម៉ោងសិក្សា ម៉ោងសម្រាកលេងកីឡា និងអាហារមានជីវជាតិគ្រប់គ្រាន់
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Daily Schedule Routine -->
+                <div class="lg:col-span-6 bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
+                        <span class="text-3xl">⏰</span>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800 font-fun">កាលវិភាគសិក្សាប្រចាំថ្ងៃ</h3>
+                            <p class="text-xs text-slate-500">ពីថ្ងៃចន្ទ ដល់ សៅរ៍</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+                            <span class="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-lg font-fun">07:00 - 07:30</span>
+                            <div class="text-xs">
+                                <div class="font-bold text-slate-800">ស្វាគមន៍សិស្ស គោរពទង់ជាតិ & ហាត់ប្រាណពេលព្រឹក</div>
+                                <div class="text-slate-500">ត្រួតពិនិត្យអនាម័យផ្ទាល់ខ្លួន និងសម្លៀកបំពាក់</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+                            <span class="px-2.5 py-1 bg-sky-100 text-sky-800 text-xs font-bold rounded-lg font-fun">07:30 - 10:45</span>
+                            <div class="text-xs">
+                                <div class="font-bold text-slate-800">ម៉ោងសិក្សាទី១ និង ទី២ (ភាសាខ្មែរ & គណិតវិទ្យា)</div>
+                                <div class="text-slate-500">មានម៉ោងសម្រាកញ៉ាំអាហារសម្រន់ ២០ នាទី</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+                            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-lg font-fun">11:00 - 13:30</span>
+                            <div class="text-xs">
+                                <div class="font-bold text-slate-800">អាហារថ្ងៃត្រង់ និងការសម្រាកគេងថ្ងៃ</div>
+                                <div class="text-slate-500">គេងក្នុងបន្ទប់ត្រជាក់ មានគ្រូមើលថែដិតដល់</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3 bg-white rounded-2xl border border-slate-100 shadow-xs">
+                            <span class="px-2.5 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-lg font-fun">13:30 - 16:30</span>
+                            <div class="text-xs">
+                                <div class="font-bold text-slate-800">ភាសាអង់គ្លេស STEM កុំព្យូទ័រ កីឡា & សិល្បៈ</div>
+                                <div class="text-slate-500">សកម្មភាពជាក្រុម និងក្លឹបចំណង់ចំណូលចិត្ត</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Lunch Menu -->
+                <div class="lg:col-span-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-6 sm:p-8 border border-amber-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-6 pb-3 border-b border-amber-200">
+                        <div class="flex items-center gap-3">
+                            <span class="text-3xl">🍲</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 font-fun">ម៉ឺនុយអាហារូបត្ថម្ភប្រចាំសប្តាហ៍</h3>
+                                <p class="text-xs text-amber-700">ចម្អិនស្រស់ៗ បន្លែធម្មជាតិ គ្មានប៊ីចេង</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 bg-amber-200 text-amber-900 rounded-full">Organic</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-xs">
+                            <div class="font-bold text-rose-500 font-fun mb-1">ថ្ងៃចន្ទ (Monday)</div>
+                            <div class="font-semibold text-slate-800">បាយសាច់មាន់ចៀនទឹកឃ្មុំ + ស៊ុបការ៉ុត</div>
+                            <div class="text-slate-500 mt-1">បង្អែម៖ ចេកទុំ & ទឹកដោះគោស្រស់</div>
+                        </div>
+
+                        <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-xs">
+                            <div class="font-bold text-blue-500 font-fun mb-1">ថ្ងៃអង្គារ (Tuesday)</div>
+                            <div class="font-semibold text-slate-800">សម្លម្ជូរគ្រឿងត្រីឆ្លូញ + សាច់ជ្រូកបំពង</div>
+                            <div class="text-slate-500 mt-1">បង្អែម៖ ឪឡឹកក្រហម</div>
+                        </div>
+
+                        <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-xs">
+                            <div class="font-bold text-emerald-500 font-fun mb-1">ថ្ងៃពុធ (Wednesday)</div>
+                            <div class="font-semibold text-slate-800">មីគោកពិសេសសាច់គោ + ស៊ុបប្រហិតត្រី</div>
+                            <div class="text-slate-500 mt-1">បង្អែម៖ ទឹកសណ្តែកសរីរាង្គ</div>
+                        </div>
+
+                        <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-xs">
+                            <div class="font-bold text-amber-500 font-fun mb-1">ថ្ងៃព្រហស្បតិ៍ (Thursday)</div>
+                            <div class="font-semibold text-slate-800">បាយឆាពងមាន់ + ឆាផ្កាខាត់ណាខ្យងសាច់ជ្រូក</div>
+                            <div class="text-slate-500 mt-1">បង្អែម៖ ផ្លែប៉ោមស្រស់</div>
+                        </div>
+
+                        <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-xs sm:col-span-2">
+                            <div class="font-bold text-purple-500 font-fun mb-1">ថ្ងៃសុក្រ (Friday)</div>
+                            <div class="font-semibold text-slate-800">ស្ងោរស្ពៃបៃតងសាច់មាន់ + ត្រីបំពងជូរអែម + បាយអង្ករផ្កាម្លិះ</div>
+                            <div class="text-slate-500 mt-1">បង្អែម៖ យ៉ាអួធម្មជាតិ (Yogurt)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Activities & Photo Gallery -->
+    <section id="activities" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-rose-500 font-bold text-xs sm:text-sm uppercase tracking-wider bg-rose-100 px-4 py-1.5 rounded-full border border-rose-200">
+                        📸 ក្លឹប និងសកម្មភាពក្រៅម៉ោង
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 font-fun">
+                        រូបភាពសកម្មភាពដ៏រស់រវើក
+                    </h2>
+                </div>
+                <p class="text-slate-600 text-sm max-w-md mt-3 md:mt-0">
+                    សិស្សានុសិស្សទទួលបានបទពិសោធន៍ថ្មីៗតាមរយៈដំណើរកម្សាន្តសិក្សា ការងារសប្បុរសធម៌ និងការប្រកួតប្រជែងផ្សេងៗ។
+                </p>
+            </div>
+
+            <!-- Activities Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Activity 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200 group">
+                    <div class="h-48 bg-gradient-to-tr from-amber-300 via-rose-300 to-sky-300 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <span class="text-7xl">🚌⛺</span>
+                        <span class="absolute top-3 right-3 bg-white/90 text-slate-800 text-[11px] font-bold px-3 py-1 rounded-full shadow-xs">
+                            ដំណើរកម្សាន្ត
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-slate-900 mb-2 font-fun">
+                            ទស្សនកិច្ចសិក្សានៅសារមន្ទីរជាតិ & សួនសត្វ
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            កុមារបានសិក្សាអំពីប្រវត្តិសាស្ត្រ សត្វព្រៃ និងការអភិរក្សបរិស្ថានធម្មជាតិដោយផ្ទាល់ភ្នែកជាមួយលោកគ្រូអ្នកគ្រូ។
+                        </p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ខែ កុម្ភៈ ២០២៦</span>
+                            <span class="text-rose-500 font-bold">សិស្ស ១២០ នាក់</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200 group">
+                    <div class="h-48 bg-gradient-to-tr from-emerald-300 via-teal-300 to-sky-300 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <span class="text-7xl">🎨🖌️</span>
+                        <span class="absolute top-3 right-3 bg-white/90 text-slate-800 text-[11px] font-bold px-3 py-1 rounded-full shadow-xs">
+                            សិល្បៈច្នៃប្រឌិត
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-slate-900 mb-2 font-fun">
+                            ការប្រកួតគូរគំនូរ "ក្តីស្រមៃក្នុងអនាគត"
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            ការបញ្ចេញស្នាដៃគូរគំនូរដោយសេរី ជួយបណ្តុះការស្រមើស្រមៃ និងការយល់ដឹងអំពីពណ៌ និងសោភ័ណភាព។
+                        </p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ខែ មករា ២០២៦</span>
+                            <span class="text-emerald-500 font-bold">រង្វាន់លើកទឹកចិត្ត</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-200 group">
+                    <div class="h-48 bg-gradient-to-tr from-purple-300 via-pink-300 to-rose-300 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition duration-500">
+                        <span class="text-7xl">📖✨</span>
+                        <span class="absolute top-3 right-3 bg-white/90 text-slate-800 text-[11px] font-bold px-3 py-1 rounded-full shadow-xs">
+                            ទិវាអំណាន
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-base font-bold text-slate-900 mb-2 font-fun">
+                            ពិធីបុណ្យអំណានសៀវភៅ និងនិទានរឿងកុមារ
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            កម្មវិធីជំរុញទម្លាប់ចូលចិត្តអានសៀវភៅ ការចែករំលែកសៀវភៅរឿង និងការសម្តែងល្ខោនតូចៗរបស់សិស្ស។
+                        </p>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ខែ ធ្នូ ២០២៥</span>
+                            <span class="text-purple-500 font-bold">បណ្ណាល័យសាលា</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Online Admission Section -->
+    <section id="admission" class="py-16 md:py-24 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-amber-600 font-bold text-xs sm:text-sm uppercase tracking-wider bg-amber-100 px-4 py-1.5 rounded-full border border-amber-300">
+                            📝 ចុះឈ្មោះចូលរៀន
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 font-fun">
+                            ពាក្យសុំចុះឈ្មោះចូលរៀនអនឡាញ
+                        </h2>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                            សូមបំពេញព័ត៌មានរបស់បុត្រធីតាខាងក្រោម។ បន្ទាប់ពីការចុះឈ្មោះ ប្រព័ន្ធនឹងចេញប័ណ្ណសម្គាល់ការចុះឈ្មោះ (Student Admission Pass) ភ្លាមៗដើម្បីយកមកផ្ទៀងផ្ទាត់នៅសាលា។
+                        </p>
+                    </div>
+
+                    <!-- Steps -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-amber-200 shadow-xs">
+                            <div class="w-10 h-10 rounded-xl bg-amber-400 text-white flex items-center justify-center font-bold text-base font-fun shrink-0">1</div>
+                            <div class="text-xs">
+                                <div class="font-bold text-slate-800">បំពេញព័ត៌មានសិស្ស និងអាណាព្យាបាល</div>
+                                <div class="text-slate-500">ឈ្មោះ ថ្ងៃខែឆ្នាំកំណើត និងលេខទូរស័ព្ទ</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-amber-200 shadow-xs">
+                            <div class="w-10 h-10 rounded-xl bg-sky-400 text-white flex items-center justify-center font-bold text-base font-fun shrink-0">2</div>
+                            <div class="text-xs">
+                                <div class="font-bold text-slate-800">ជ្រើសរើសកម្រិតថ្នាក់ & វេនសិក្សា</div>
+                                <div class="text-slate-500">ថ្នាក់ពេញមួយថ្ងៃ ឬ កន្លះថ្ងៃ (ព្រឹក/រសៀល)</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-amber-200 shadow-xs">
+                            <div class="w-10 h-10 rounded-xl bg-rose-400 text-white flex items-center justify-center font-bold text-base font-fun shrink-0">3</div>
+                            <div class="text-xs">
+                                <div class="font-bold text-slate-800">បោះពុម្ពប័ណ្ណចុះឈ្មោះ & ចូលរៀនសាកល្បង</div>
+                                <div class="text-slate-500">ទទួលបានការបញ្ចុះតម្លៃ ២០% លើថ្លៃសិក្សា</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Hotline Box -->
+                    <div class="p-5 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md">
+                        <div class="flex items-center gap-3">
+                            <div class="text-3xl">☎️</div>
+                            <div>
+                                <div class="text-xs text-sky-100">ទូរស័ព្ទប្រឹក្សាយោបល់ការចុះឈ្មោះ</div>
+                                <div class="text-lg font-bold font-fun">+855 (0) 12 999 888 / 023 888 777</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form & Confirmation Slip Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-4 border-amber-200 relative">
+                        
+                        <!-- Form Container -->
+                        <form id="studentRegForm" onsubmit="handleRegistration(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">គោត្តនាម និងនាមសិស្ស (Khmer) *</label>
+                                    <input type="text" id="stuNameKh" required placeholder="ឧ. រិទ្ធី មុនីរ័ត្ន" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Student Name in English *</label>
+                                    <input type="text" id="stuNameEn" required placeholder="e.g. RITHY MONYROTH" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">ភេទ (Gender) *</label>
+                                    <select id="stuGender" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                        <option value="" disabled selected>-- ជ្រើសរើសភេទ --</option>
+                                        <option value="ប្រុស (Male)">ប្រុស (Male)</option>
+                                        <option value="ស្រី (Female)">ស្រី (Female)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">ថ្ងៃខែឆ្នាំកំណើត (DOB) *</label>
+                                    <input type="date" id="stuDob" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">ជ្រើសរើសកម្រិតថ្នាក់ (Grade) *</label>
+                                    <select id="stuGrade" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                        <option value="" disabled selected>-- ជ្រើសរើសថ្នាក់ --</option>
+                                        <option value="ថ្នាក់មត្តេយ្យ (Kindergarten)">ថ្នាក់មត្តេយ្យ (Kindergarten 3-5 ឆ្នាំ)</option>
+                                        <option value="ថ្នាក់ទី១ (Grade 1)">ថ្នាក់ទី១ (Grade 1)</option>
+                                        <option value="ថ្នាក់ទី២ (Grade 2)">ថ្នាក់ទី២ (Grade 2)</option>
+                                        <option value="ថ្នាក់ទី៣ (Grade 3)">ថ្នាក់ទី៣ (Grade 3)</option>
+                                        <option value="ថ្នាក់ទី៤ (Grade 4)">ថ្នាក់ទី៤ (Grade 4)</option>
+                                        <option value="ថ្នាក់ទី៥ (Grade 5)">ថ្នាក់ទី៥ (Grade 5)</option>
+                                        <option value="ថ្នាក់ទី៦ (Grade 6)">ថ្នាក់ទី៦ (Grade 6)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">វេនសិក្សា (Study Shift) *</label>
+                                    <select id="stuShift" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                        <option value="ពេញមួយថ្ងៃ (Full Day: 7:30 - 16:30)">ពេញមួយថ្ងៃ (Full Day: 7:30 - 16:30 + អាហារ)</option>
+                                        <option value="វេនព្រឹក (Morning: 7:30 - 11:00)">វេនព្រឹក (Morning: 7:30 - 11:00)</option>
+                                        <option value="វេនរសៀល (Afternoon: 13:00 - 16:30)">វេនរសៀល (Afternoon: 13:00 - 16:30)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">ឈ្មោះអាណាព្យាបាល / មាតាបិតា *</label>
+                                    <input type="text" id="parentName" required placeholder="ឧ. រិទ្ធី សុវណ្ណ" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">លេខទូរស័ព្ទទាក់ទង (Phone) *</label>
+                                    <input type="tel" id="parentPhone" required placeholder="012 345 678" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">អាសយដ្ឋានបច្ចុប្បន្ន (Address)</label>
+                                <input type="text" id="parentAddress" placeholder="រាជធានីភ្នំពេញ" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-amber-400 focus:bg-white transition">
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-400 via-rose-400 to-rose-500 hover:brightness-105 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>បញ្ជូនពាក្យចុះឈ្មោះ (Submit Registration)</span>
+                            </button>
+                        </form>
+
+                        <!-- Generated Admission Slip Card (Initially Hidden) -->
+                        <div id="regResultBox" class="hidden space-y-4">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-2">
+                                    🎉
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 font-fun">ចុះឈ្មោះបានជោគជ័យ!</h3>
+                                <p class="text-xs text-slate-500">នេះជាប័ណ្ណសម្គាល់ការចុះឈ្មោះរបស់បុត្រធីតា</p>
+                            </div>
+
+                            <!-- Styled Cute Admission Pass -->
+                            <div id="printArea" class="bg-gradient-to-br from-amber-100 via-rose-50 to-sky-100 p-6 rounded-3xl border-2 border-dashed border-amber-400 relative">
+                                <div class="flex items-center justify-between border-b border-amber-200 pb-3 mb-3">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-2xl">☀️</span>
+                                        <div>
+                                            <div class="text-xs font-bold text-slate-800">សាលាបឋមសិក្សារស្មីកុមារ</div>
+                                            <div class="text-[10px] text-sky-600 font-bold font-fun">STUDENT ADMISSION PASS</div>
+                                        </div>
+                                    </div>
+                                    <span id="ticketCode" class="font-mono text-xs font-bold px-2.5 py-1 bg-white rounded-lg border border-amber-300 text-amber-800">
+                                        RK-2026-0001
+                                    </span>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div>
+                                        <span class="text-slate-500 block text-[10px]">ឈ្មោះសិស្ស៖</span>
+                                        <span id="resStuName" class="font-bold text-slate-900">រិទ្ធី មុនីរ័ត្ន</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-slate-500 block text-[10px]">កម្រិតថ្នាក់៖</span>
+                                        <span id="resStuGrade" class="font-bold text-blue-600">ថ្នាក់ទី១</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-slate-500 block text-[10px]">វេនសិក្សា៖</span>
+                                        <span id="resStuShift" class="font-bold text-slate-800">ពេញមួយថ្ងៃ</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-slate-500 block text-[10px]">អាណាព្យាបាល៖</span>
+                                        <span id="resParent" class="font-bold text-slate-800">រិទ្ធី សុវណ្ណ</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 pt-2 border-t border-amber-200 flex items-center justify-between text-[10px] text-slate-500">
+                                    <span>សុពលភាព៖ ៣០ ថ្ងៃបន្ទាប់ពីចុះឈ្មោះ</span>
+                                    <span class="text-emerald-600 font-bold">✓ ទទួលបានអាហារូបករណ៍ ២០%</span>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                                <button onclick="printPass()" class="flex-1 py-2.5 px-4 bg-sky-500 hover:bg-sky-600 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition">
+                                    <i class="fa-solid fa-print"></i>
+                                    <span>បោះពុម្ពប័ណ្ណ (Print Slip)</span>
+                                </button>
+                                <button onclick="resetRegForm()" class="flex-1 py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+                                    ចុះឈ្មោះបន្ថែមទៀត
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Info -->
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-wider bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
+                        📍 ទីតាំងសាលា
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-fun">
+                        អញ្ជើញមកទស្សនាសាលារបស់យើង
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        សាលាបឋមសិក្សារស្មីកុមារ ស្វាគមន៍មាតាបិតា និងកូនៗមកទស្សនាបន្ទប់រៀន បណ្ណាល័យ និងសួនកម្សាន្តដោយឥតគិតថ្លៃ។
+                    </p>
+
+                    <div class="space-y-3 text-xs text-slate-700 pt-2">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-white text-rose-500 flex items-center justify-center shadow-xs"><i class="fa-solid fa-location-dot"></i></span>
+                            <span>ផ្លូវ ២០០៤ សង្កាត់ទឹកថ្លា ខណ្ឌសែនសុខ រាជធានីភ្នំពេញ</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-white text-emerald-500 flex items-center justify-center shadow-xs"><i class="fa-solid fa-phone"></i></span>
+                            <span>+855 12 999 888 / 023 888 777</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-white text-sky-500 flex items-center justify-center shadow-xs"><i class="fa-solid fa-envelope"></i></span>
+                            <span>info@rasmeykomar.edu.kh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulated Colorful Campus Map Card -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-5 rounded-3xl shadow-md border-2 border-slate-200 overflow-hidden">
+                        <div class="h-64 bg-gradient-to-tr from-sky-100 via-amber-50 to-emerald-100 rounded-2xl relative flex items-center justify-center border border-slate-200">
+                            <!-- Visual Graphic for Campus -->
+                            <div class="text-center">
+                                <div class="text-6xl animate-bounce-slow mb-2">🏫</div>
+                                <span class="bg-white/95 px-4 py-1.5 rounded-full text-xs font-bold text-slate-800 shadow-md border border-amber-300">
+                                    បរិវេណសាលាបឋមសិក្សារស្មីកុមារ (Phnom Penh)
+                                </span>
+                            </div>
+                            <div class="absolute bottom-3 left-4 text-xs font-bold text-slate-500">
+                                <i class="fa-solid fa-circle-info text-amber-500 mr-1"></i> មានចំណតរថយន្តធំទូលាយ & សុវត្ថិភាព
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kid-Friendly Colorful Footer -->
+    <footer class="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-300 text-xs pt-12 pb-8 border-t-4 border-amber-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Col 1 -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-3xl">☀️</span>
+                        <div>
+                            <span class="block text-base font-bold text-white font-fun">សាលាបឋមសិក្សារស្មីកុមារ</span>
+                            <span class="text-[10px] text-amber-400 uppercase tracking-widest font-fun">Rasmey Komar Primary School</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        កន្លែងដែលកុមាររៀនសូត្រដោយក្តីស្រឡាញ់ បង្កើតមិត្តភាព និងកសាងអនាគតដ៏ភ្លឺស្វាង។
+                    </p>
+                    <div class="flex gap-2 pt-1">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-blue-600 text-white flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-sky-500 text-white flex items-center justify-center transition"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-red-600 text-white flex items-center justify-center transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3 font-fun">កម្រិតថ្នាក់សិក្សា</h4>
+                    <ul class="space-y-1.5 text-slate-400">
+                        <li><a href="#classes" class="hover:text-amber-400 transition">ថ្នាក់មត្តេយ្យសិក្សា (Kindergarten)</a></li>
+                        <li><a href="#classes" class="hover:text-amber-400 transition">ថ្នាក់ទី១ និង ទី២</a></li>
+                        <li><a href="#classes" class="hover:text-amber-400 transition">ថ្នាក់ទី៣ និង ទី៤</a></li>
+                        <li><a href="#classes" class="hover:text-amber-400 transition">ថ្នាក់ទី៥ និង ទី៦</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3 font-fun">តំណភ្ជាប់រហ័ស</h4>
+                    <ul class="space-y-1.5 text-slate-400">
+                        <li><a href="#admission" class="hover:text-amber-400 transition">ចុះឈ្មោះចូលរៀនអនឡាញ</a></li>
+                        <li><a href="#games" class="hover:text-amber-400 transition">ហ្គេមរៀនសូត្រកុមារ</a></li>
+                        <li><a href="#schedule" class="hover:text-amber-400 transition">កាលវិភាគ & អាហារថ្ងៃត្រង់</a></li>
+                        <li><a href="#activities" class="hover:text-amber-400 transition">រូបភាពសកម្មភាពសាលា</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3 font-fun">សេវាកម្មពិសេស</h4>
+                    <div class="space-y-2 text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <span class="text-amber-400">✓</span> រថយន្តដឹកជញ្ជូនដល់មុខផ្ទះ
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-amber-400">✓</span> គ្រូពេទ្យប្រចាំការប្រចាំថ្ងៃ
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-amber-400">✓</span> អាហារូបត្ថម្ភសរីរាង្គ
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="pt-6 border-t border-slate-800 text-center sm:flex sm:justify-between text-slate-500 text-[11px]">
+                <p>© ២០២៦ សាលាបឋមសិក្សារស្មីកុមារ (Rasmey Komar Primary School). រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+                <p class="mt-1 sm:mt-0 font-fun">Designed with ❤️ for Happy Kids & Parents</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Class Details Modal -->
+    <div id="classModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border-4 border-amber-300 relative animate-float">
+            <button onclick="closeClassModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl font-bold">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <span id="modalIcon" class="text-4xl">🧸</span>
+                <div>
+                    <h3 id="modalTitle" class="text-xl font-bold text-slate-900 font-fun">ព័ត៌មានថ្នាក់សិក្សា</h3>
+                    <span id="modalAge" class="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">អាយុ ៣-៥ ឆ្នាំ</span>
+                </div>
+            </div>
+            <div class="space-y-3 text-xs text-slate-700">
+                <p id="modalDesc" class="leading-relaxed bg-amber-50 p-3 rounded-2xl border border-amber-200">
+                </p>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1">មុខវិជ្ជា និងសកម្មភាពស្នូល៖</h4>
+                    <ul id="modalList" class="space-y-1 list-disc list-inside text-slate-600">
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end gap-2">
+                <button onclick="closeClassModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs">
+                    បិទ
+                </button>
+                <a href="#admission" onclick="closeClassModal()" class="px-4 py-2 bg-gradient-to-r from-amber-400 to-rose-400 text-white font-bold rounded-xl text-xs">
+                    ចុះឈ្មោះថ្នាក់នេះ
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Web Audio Synthesizer for Fun Sound Effects
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new AudioCtx();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        function playSound(type) {
+            try {
+                const ctx = getAudioContext();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                const now = ctx.currentTime;
+                if (type === 'correct') {
+                    // Cheerful double chime
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, now); // C5
+                    osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                    osc.start(now);
+                    osc.stop(now + 0.4);
+                } else if (type === 'wrong') {
+                    // Soft low boop
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(220, now);
+                    osc.frequency.setValueAtTime(180, now + 0.1);
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                    osc.start(now);
+                    osc.stop(now + 0.3);
+                }
+            } catch (e) {
+                // AudioContext fallback
+            }
+        }
+
+        // Mini Quiz Games State
+        let currentGameMode = 'khmer'; // 'khmer' or 'math'
+        let playerScore = 0;
+        let currentKhmerIndex = 0;
+        let currentMathIndex = 0;
+
+        const khmerQuizData = [
+            {
+                emoji: '🦁',
+                correct: 'តោ (Lion)',
+                options: ['តោ (Lion)', 'ខ្លា (Tiger)', 'ឆ្មា (Cat)', 'ដំរី (Elephant)']
+            },
+            {
+                emoji: '🍎',
+                correct: 'ផ្លែប៉ោម (Apple)',
+                options: ['ផ្លែចេក (Banana)', 'ផ្លែប៉ោម (Apple)', 'ផ្លែក្រូច (Orange)', 'ផ្លែស្វាយ (Mango)']
+            },
+            {
+                emoji: '🚗',
+                correct: 'ឡាន (Car)',
+                options: ['កង់ (Bicycle)', 'ទូក (Boat)', 'ឡាន (Car)', 'យន្តហោះ (Airplane)']
+            },
+            {
+                emoji: '☀️',
+                correct: 'ព្រះអាទិត្យ (Sun)',
+                options: ['ព្រះច័ន្ទ (Moon)', 'ពពក (Cloud)', 'ផ្កាយ (Star)', 'ព្រះអាទិត្យ (Sun)']
+            },
+            {
+                emoji: '🐘',
+                correct: 'ដំរី (Elephant)',
+                options: ['សេះ (Horse)', 'ដំរី (Elephant)', 'គោ (Cow)', 'មាន់ (Chicken)']
+            }
+        ];
+
+        const mathQuizData = [
+            {
+                equation: '4 + 3 = ?',
+                correct: '7',
+                options: ['6', '7', '8', '9']
+            },
+            {
+                equation: '10 - 4 = ?',
+                correct: '6',
+                options: ['5', '6', '7', '8']
+            },
+            {
+                equation: '5 + 5 = ?',
+                correct: '10',
+                options: ['9', '10', '11', '12']
+            },
+            {
+                equation: '8 - 3 = ?',
+                correct: '5',
+                options: ['4', '5', '6', '7']
+            },
+            {
+                equation: '6 + 2 = ?',
+                correct: '8',
+                options: ['7', '8', '9', '10']
+            }
+        ];
+
+        function switchGameMode(mode) {
+            currentGameMode = mode;
+            const btnKhmer = document.getElementById('tabBtnKhmer');
+            const btnMath = document.getElementById('tabBtnMath');
+            const boxKhmer = document.getElementById('khmerGameBox');
+            const boxMath = document.getElementById('mathGameBox');
+
+            if (mode === 'khmer') {
+                btnKhmer.className = 'px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm bg-rose-500 text-white shadow-md transition flex items-center gap-2';
+                btnMath.className = 'px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-sky-100 transition flex items-center gap-2';
+                boxKhmer.classList.remove('hidden');
+                boxMath.classList.add('hidden');
+                loadKhmerQuestion();
+            } else {
+                btnMath.className = 'px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm bg-blue-600 text-white shadow-md transition flex items-center gap-2';
+                btnKhmer.className = 'px-5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-rose-100 transition flex items-center gap-2';
+                boxMath.classList.remove('hidden');
+                boxKhmer.classList.add('hidden');
+                loadMathQuestion();
+            }
+        }
+
+        function loadKhmerQuestion() {
+            const data = khmerQuizData[currentKhmerIndex];
+            document.getElementById('khmerQNum').textContent = (currentKhmerIndex + 1);
+            document.getElementById('khmerEmojiClue').textContent = data.emoji;
+            const grid = document.getElementById('khmerOptionsGrid');
+            grid.innerHTML = '';
+
+            data.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'p-4 rounded-2xl bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 text-slate-800 font-bold text-xs sm:text-sm transition transform active:scale-95 text-center';
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(opt, data.correct, 'khmer');
+                grid.appendChild(btn);
+            });
+        }
+
+        function loadMathQuestion() {
+            const data = mathQuizData[currentMathIndex];
+            document.getElementById('mathQNum').textContent = (currentMathIndex + 1);
+            document.getElementById('mathEquationText').textContent = data.equation;
+            const grid = document.getElementById('mathOptionsGrid');
+            grid.innerHTML = '';
+
+            data.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'p-4 rounded-2xl bg-sky-50 hover:bg-sky-100 border-2 border-sky-300 text-slate-800 font-bold text-sm sm:text-base font-fun transition transform active:scale-95 text-center';
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(opt, data.correct, 'math');
+                grid.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected, correct, mode) {
+            const feedback = document.getElementById('gameFeedbackMsg');
+            feedback.classList.remove('hidden');
+
+            if (selected === correct) {
+                // Correct!
+                playerScore += 10;
+                document.getElementById('playerScore').textContent = playerScore;
+                playSound('correct');
+
+                // Confetti burst for kids!
+                if (window.confetti) {
+                    confetti({
+                        particleCount: 50,
+                        spread: 60,
+                        origin: { y: 0.7 }
+                    });
+                }
+
+                feedback.className = 'mt-4 p-3 rounded-xl text-center font-bold text-xs sm:text-sm bg-emerald-100 text-emerald-800 border border-emerald-300';
+                feedback.innerHTML = '🎉 ឆ្លើយត្រូវហើយ! ពូកែណាស់កូន (+10 ផ្កាយ ⭐)';
+
+                // Move to next question after small delay
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                    if (mode === 'khmer') {
+                        currentKhmerIndex = (currentKhmerIndex + 1) % khmerQuizData.length;
+                        loadKhmerQuestion();
+                    } else {
+                        currentMathIndex = (currentMathIndex + 1) % mathQuizData.length;
+                        loadMathQuestion();
+                    }
+                }, 1200);
+
+            } else {
+                // Wrong
+                playSound('wrong');
+                feedback.className = 'mt-4 p-3 rounded-xl text-center font-bold text-xs sm:text-sm bg-rose-100 text-rose-800 border border-rose-300';
+                feedback.innerHTML = '❌ មិនទាន់ត្រឹមត្រូវទេ សាកល្បងម្តងទៀតណា៎!';
+
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                }, 1500);
+            }
+        }
+
+        // Class Modal Details Data
+        const classDetails = {
+            'kinder': {
+                title: 'ថ្នាក់មត្តេយ្យសិក្សា (Kindergarten)',
+                age: 'អាយុ ៣-៥ ឆ្នាំ',
+                icon: '🧸',
+                desc: 'កម្មវិធីសិក្សាមត្តេយ្យផ្តោតលើការកសាងទំនុកចិត្ត ភាពក្លាហាន និងការអភិវឌ្ឍប្រាជ្ញាស្មារតីតាមរយៈល្បែងកម្សាន្ត។ បង្រៀនដោយគ្រូជំនាញដែលមានចិត្តអត់ធ្មត់ និងក្តីស្រឡាញ់។',
+                list: [
+                    'ការសម្គាល់ព្យញ្ជនៈ និងស្រៈខ្មែរ',
+                    'ការរាប់លេខ និងការគូសវាសរូបរាង',
+                    'ហាត់ច្រៀង រាំ និងការស្តាប់រឿងនិទានអប់រំ',
+                    'ការអភិវឌ្ឍចលនាសាច់ដុំតូច-ធំ តាមរយៈល្បែងដីឥដ្ឋ និងគំនូរ'
+                ]
+            },
+            'g12': {
+                title: 'ថ្នាក់ទី១ និង ទី២ (Grades 1-2)',
+                age: 'អាយុ ៦-៧ ឆ្នាំ',
+                icon: '✏️',
+                desc: 'ថ្នាក់បឋមសិក្សាដំបូង ផ្តោតលើមូលដ្ឋានគ្រឹះរឹងមាំនៃការអាន និងសរសេរភាសាខ្មែរ គណិតវិទ្យា និងការចាប់ផ្តើមភាសាអង់គ្លេសទ្វេភាសា។',
+                list: [
+                    'ការប្រកបពាក្យ អំណាន និងការសរសេរតាមអាន',
+                    'ប្រមាណវិធីបូក ដក និងការដោះស្រាយចំណោទសាមញ្ញ',
+                    'ភាសាអង់គ្លេសបឋម Phonics និងការសន្ទនាក្នុងថ្នាក់',
+                    'អប់រំកាយ កីឡាហែលទឹក និងអនាម័យផ្ទាល់ខ្លួន'
+                ]
+            },
+            'g34': {
+                title: 'ថ្នាក់ទី៣ និង ទី៤ (Grades 3-4)',
+                age: 'អាយុ ៨-៩ ឆ្នាំ',
+                icon: '🔬',
+                desc: 'ពង្រីកចំណេះដឹងតាមរយៈការស្រាវជ្រាវ វិទ្យាសាស្ត្រសាមញ្ញ ការសរសេរតែងសេចក្តី និងការប្រើប្រាស់កុំព្យូទ័រក្នុងការរៀនសូត្រ។',
+                list: [
+                    'វិទ្យាសាស្ត្រជីវិត រុក្ខជាតិ និងបរិស្ថានរស់នៅ',
+                    'ប្រមាណវិធីគុណ ចែក ប្រភាគ និងរង្វាស់រង្វាល់',
+                    'ការតែងសេចក្តី និងវេយ្យាករណ៍ភាសាខ្មែរ',
+                    'កុំព្យូទ័របឋម (Typing, Digital Safety & Kids STEM)'
+                ]
+            },
+            'g56': {
+                title: 'ថ្នាក់ទី៥ និង ទី៦ (Grades 5-6)',
+                age: 'អាយុ ១០-១១ ឆ្នាំ',
+                icon: '🏅',
+                desc: 'កម្រិតថ្នាក់ខ្ពស់នៃបឋមសិក្សា ត្រៀមខ្លួនសម្រាប់ថ្នាក់អនុវិទ្យាល័យ ពង្រឹងភាពជាអ្នកដឹកនាំ ការធ្វើការងារជាក្រុម និងការសរសេរកូដកុមារ។',
+                list: [
+                    'ត្រៀមប្រឡងបញ្ចប់ការសិក្សាបឋមសិក្សា (ក្រសួងអប់រំ)',
+                    'គណិតវិទ្យាកម្រិតខ្ពស់ និងធរណីមាត្រ',
+                    'ភាសាអង់គ្លេសកម្រិតអន្តរជាតិ (Cambridge Primary)',
+                    'ការសរសេរកូដបង្កើតហ្គេម (Scratch Programming)'
+                ]
+            }
+        };
+
+        function openClassModal(key) {
+            const data = classDetails[key];
+            if (!data) return;
+
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalAge').textContent = data.age;
+            document.getElementById('modalIcon').textContent = data.icon;
+            document.getElementById('modalDesc').textContent = data.desc;
+
+            const listEl = document.getElementById('modalList');
+            listEl.innerHTML = '';
+            data.list.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                listEl.appendChild(li);
+            });
+
+            document.getElementById('classModal').classList.remove('hidden');
+        }
+
+        function closeClassModal() {
+            document.getElementById('classModal').classList.add('hidden');
+        }
+
+        // Student Registration Form Submit Handler
+        function handleRegistration(e) {
+            e.preventDefault();
+
+            const khName = document.getElementById('stuNameKh').value;
+            const enName = document.getElementById('stuNameEn').value;
+            const grade = document.getElementById('stuGrade').value;
+            const shift = document.getElementById('stuShift').value;
+            const parent = document.getElementById('parentName').value;
+
+            // Generate unique registration code
+            const randomCode = Math.floor(1000 + Math.random() * 9000);
+            const ticketId = `RK-2026-${randomCode}`;
+
+            document.getElementById('ticketCode').textContent = ticketId;
+            document.getElementById('resStuName').textContent = `${khName} (${enName.toUpperCase()})`;
+            document.getElementById('resStuGrade').textContent = grade;
+            document.getElementById('resStuShift').textContent = shift;
+            document.getElementById('resParent').textContent = parent;
+
+            document.getElementById('studentRegForm').classList.add('hidden');
+            document.getElementById('regResultBox').classList.remove('hidden');
+
+            // Happy Sound and Confetti
+            playSound('correct');
+            if (window.confetti) {
+                confetti({
+                    particleCount: 80,
+                    spread: 80,
+                    origin: { y: 0.6 }
+                });
+            }
+        }
+
+        function resetRegForm() {
+            document.getElementById('studentRegForm').reset();
+            document.getElementById('regResultBox').classList.add('hidden');
+            document.getElementById('studentRegForm').classList.remove('hidden');
+        }
+
+        function printPass() {
+            window.print();
+        }
+
+        // Initialize quiz on load
+        window.onload = function() {
+            loadKhmerQuestion();
+        };
+    </script>
+</body>
+</html>
